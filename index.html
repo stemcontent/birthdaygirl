@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Happy birthday, Roro!</h1>
+    <p>Press this button</p>
+    <button id="confettiButton">Click me</button>
+    <p id="loveMessage" class="hidden">I LOVE YOU</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    document.getElementById('confettiButton').addEventListener('click', function() {
+      // Show confetti
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+
+      // Display the love message
+      document.getElementById('loveMessage').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
